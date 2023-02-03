@@ -20,7 +20,7 @@ $gn.ready(function (variable) {
             shippingCosts: SHIPPING * 100,
             //customer: false,
             //shippingAddress: false,
-            actionForm: '../backend/index.php' // Local onde será enviada os dados para criação da cobrança
+            actionForm: '../backend/php/index.php' // Local onde será enviada os dados para criação da cobrança
         };
 
         data.items = cart.map((item) => {
