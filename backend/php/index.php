@@ -29,13 +29,15 @@ $pixKey = "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx";
 /**
  * Recebendo dados do pedido
  */
-$postItems = isset($_POST['items']) ? $_POST['items'] : null;
-$postShipping = isset($_POST['shippingCosts']) ? $_POST['shippingCosts'] : null;
-$postCustomer = isset($_POST['customer']) ? $_POST['customer'] : null;
-$postShippingAddress = isset($_POST['shippingAddress']) ? $_POST['shippingAddress'] : null;
-$postPayment = isset($_POST['payment']) ? $_POST['payment'] : null;
+$json = json_decode(file_get_contents('php://input'), true);
 
-$json = file_get_contents("./db/products.json");
+$postItems = isset($json['items']) ? $json['items'] : null;
+$postShipping = isset($json['shippingCosts']) ? $json['shippingCosts'] : null;
+$postCustomer = isset($json['customer']) ? $json['customer'] : null;
+$postShippingAddress = isset($json['shippingAddress']) ? $json['shippingAddress'] : null;
+$postPayment = isset($json['payment']) ? $json['payment'] : null;
+
+$json = file_get_contents("../db/products.json");
 $products = json_decode($json);
 $totalValue = 0;
 
