@@ -33,7 +33,7 @@ $gn.ready(function (variable) {
         })
 
         /**
-         * Função que realiza a chamada do lightbox da Gerencianet e exibe na tela
+         * Função que realiza a chamada do lightbox da Efí e exibe na tela
          */
         variable.show(data);
     });
